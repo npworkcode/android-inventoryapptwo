@@ -351,22 +351,31 @@ public class EditInventory extends AppCompatActivity implements LoaderManager.Lo
                 toastMessage += context.getString(R.string.ERROR_PRODUCT_UPDATE_PRODUCT_QUANTITY_RANGE, MIN_PRICE_AND_QUANTITY, MAX_QUANTITY);
             }
         }
-        if ((currentProductUri == null) && !toastMessage.equals(EMPTY_STRING))
+        if (isNotValidString(supplierName))
+        {
+            toastMessage += context.getString(R.string.ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_NAME);
+        }
+        if (isNotValidString(supplierPhone) && isValidPhoneNumber(supplierPhone))
+        {
+            toastMessage += context.getString(R.string.ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_PHONE);
+        }
+        else if (!isValidPhoneNumber(supplierPhone))
+        {
+            toastMessage += context.getString(R.string.ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_PHONE);
+        }
+        // ((currentProductUri == null) &&
+        if (!toastMessage.equals(EMPTY_STRING))
         {
             Toast.makeText(context,toastMessage,Toast.LENGTH_SHORT).show();
             return;
         }
+
         values.put(COLUMN_PRODUCT_NAME,productName);
         values.put(COLUMN_PRODUCT_PRICE, price);
         values.put(COLUMN_PRODUCT_QUANTITY, quantity);
-        if (!isNotValidString(supplierName))
-        {
-            values.put(COLUMN_PRODUCT_SUPPLIER_NAME, supplierName);
-        }
-        if (!isNotValidString(supplierPhone) && isValidPhoneNumber(supplierPhone))
-        {
-            values.put(COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierPhone);
-        }
+        values.put(COLUMN_PRODUCT_SUPPLIER_NAME, supplierName);
+        values.put(COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierPhone);
+
         if (currentProductUri == null)
         {
             Uri newUri = getContentResolver().insert(CONTENT_URI, values);

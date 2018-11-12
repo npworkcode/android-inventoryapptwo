@@ -9,8 +9,8 @@
     <string name="ERROR_PRODUCT_UPDATE_PRODUCT_QUANTITY">Product requires a quantity\n</string>
     <string name="ERROR_PRODUCT_UPDATE_PRODUCT_PRICE_RANGE">Product price must be between %1$d and %2$d\n</string>
     <string name="ERROR_PRODUCT_UPDATE_PRODUCT_QUANTITY_RANGE">Product quantity must be between %1$d and %2$d\n</string>
-    <string name="ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_NAME">Invalid Supplier Name entered</string>
-    <string name="ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_PHONE">Invalid Supplier Phone Number entered</string>
+    <string name="ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_NAME">Invalid Supplier Name entered\n</string>
+    <string name="ERROR_PRODUCT_UPDATE_PRODUCT_SUPPLIER_PHONE">Invalid Supplier Phone Number entered\n</string>
     <string name="ERROR_PRODUCT_INSERT_PROVIDER">Insertion is not supported for Uri %1$s</string>
     <string name="ERROR_PRODUCT_INSERT_RESULT">Error saving the product</string>
     <string name="ERROR_PRODUCT_DELETE_RESULT">Error deleting the product</string>

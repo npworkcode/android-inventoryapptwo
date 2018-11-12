@@ -27,35 +27,40 @@ public class ProductCursorAdapter extends CursorAdapter
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup)
     {
-        return LayoutInflater.from(context).inflate(R.layout.list_item, viewGroup, false);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.list_item, viewGroup, false);
+        ViewHolder holder = new ViewHolder();
+        holder.tvProductName = view.findViewById(R.id.text_view_product_name);
+        holder.tvProductPrice = view.findViewById(R.id.text_view_product_price);
+        holder.tvProductQuantity = view.findViewById(R.id.text_view_product_quantity);
+        holder.btnSale = view.findViewById(R.id.button_product_sale);
+        view.setTag(holder);
+        return view;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor)
     {
-        TextView tvProductName = view.findViewById(R.id.text_view_product_name);
-        TextView tvProductPrice = view.findViewById(R.id.text_view_product_price);
-        TextView tvProductQuantity = view.findViewById(R.id.text_view_product_quantity);
-        Button btnSale = view.findViewById(R.id.button_product_sale);
+        ViewHolder holder = (ViewHolder) view.getTag();
         final int productId = cursor.getInt(cursor.getColumnIndexOrThrow(_ID));
         String productName = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_NAME));
-        tvProductName.setText(productName);
+        holder.tvProductName.setText(productName);
         long productPrice = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_PRICE));
         NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.US);
         String currency = nf.format(productPrice / 100.0);
-        tvProductPrice.setText(currency);
+        holder.tvProductPrice.setText(currency);
         int productQuantity = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_QUANTITY));
 
-        tvProductQuantity.setText(Integer.toString(productQuantity));
+        holder.tvProductQuantity.setText(Integer.toString(productQuantity));
         // Don't display the Sale button if the quantity is 0
         if (productQuantity == 0)
         {
-            btnSale.setVisibility(View.GONE);
+            holder.btnSale.setVisibility(View.GONE);
         }
         else
         {
 
-            btnSale.setOnClickListener((button) ->
+            holder.btnSale.setOnClickListener((button) ->
             {
                 Uri currentProductUri = ContentUris.withAppendedId(CONTENT_URI, productId);
                 ContentValues values = new ContentValues();
@@ -67,5 +72,13 @@ public class ProductCursorAdapter extends CursorAdapter
             });
         }
 
+    }
+
+    static class ViewHolder
+    {
+        TextView tvProductName;
+        TextView tvProductPrice;
+        TextView tvProductQuantity;
+        Button btnSale;
     }
 }
