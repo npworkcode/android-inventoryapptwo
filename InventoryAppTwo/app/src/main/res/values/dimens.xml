@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textview_padding">30dp</dimen>
+    <dimen name="list_item_padding">10dp</dimen>
+    <dimen name="zero_layout_width">0dp</dimen>
+    <dimen name="edit_layout_width">2</dimen>
+    <dimen name="edit_layout_padding">4dp</dimen>
+    <dimen name="button_quantity_size">16dp</dimen>
+    <dimen name="edit_quantity_size">50dp</dimen>
+</resources>

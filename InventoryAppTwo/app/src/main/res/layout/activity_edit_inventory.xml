@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/textview_padding"
+    tools:context="com.newsapp.npmain.inventoryapptwo.EditInventory">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+          <TextView
+            android:text="@string/PRODUCT_EDIT_LABEL_NAME"
+            style="@style/CategoryStyle" />
+
+          <EditText
+                android:id="@+id/edit_product_name"
+                android:hint="@string/PRODUCT_EDIT_LABEL_NAME_TEXT"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/PRODUCT_EDIT_LABEL_PRICE"
+            style="@style/CategoryStyle" />
+
+        <EditText
+            android:id="@+id/edit_product_price"
+            android:hint="@string/PRODUCT_EDIT_LABEL_PRICE_TEXT"
+            android:inputType="number"
+            style="@style/EditorFieldStyle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/PRODUCT_EDIT_LABEL_QUANTITY"
+            style="@style/CategoryStyle" />
+
+
+        <EditText
+            android:id="@+id/edit_product_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/PRODUCT_EDIT_LABEL_QUANTITY_TEXT"
+            android:inputType="number"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_product_quantity_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/PRODUCT_EDIT_LABEL_QUANTITY_ADD"/>
+        <Button
+            android:id="@+id/button_product_quantity_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/PRODUCT_EDIT_LABEL_QUANTITY_MINUS"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/SUPPLIER_EDIT_LABEL_NAME"
+            style="@style/CategoryStyle" />
+
+        <EditText
+            android:id="@+id/edit_supplier_name"
+            android:hint="@string/SUPPLIER_EDIT_LABEL_NAME_TEXT"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/SUPPLIER_EDIT_LABEL_PHONE"
+            style="@style/CategoryStyle" />
+
+        <EditText
+            android:id="@+id/edit_supplier_phone"
+            android:hint="@string/SUPPLIER_EDIT_LABEL_PHONE_TEXT"
+            android:inputType="phone"
+            style="@style/EditorFieldStyle" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/button_product_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PRODUCT_EDIT_LABEL_SAVE"/>
+    <Button
+        android:id="@+id/button_supplier_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SUPPLIER_EDIT_LABEL_PHONE_BUTTON"/>
+    <Button
+        android:id="@+id/button_product_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PRODUCT_EDIT_LABEL_UPDATE"/>
+    <Button
+        android:id="@+id/button_product_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PRODUCT_EDIT_LABEL_DELETE"/>
+
+</LinearLayout>
